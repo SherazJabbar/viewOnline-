@@ -13,17 +13,6 @@
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 
 export default {
-  created() {
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        this.loggedIn = true;
-      } else {
-        this.loggedIn = false;
-      }
-    });
-  },
-
   data() {
     return {
       loggedIn: false,
@@ -31,6 +20,7 @@ export default {
   },
   methods: {
     async signOut() {
+      console.log("signout clicked");
       try {
         const auth = getAuth();
         const data = await signOut(auth);
@@ -40,6 +30,17 @@ export default {
         console.log(err);
       }
     },
+  },
+  created() {
+    console.log("created");
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        this.loggedIn = true;
+      } else {
+        this.loggedIn = false;
+      }
+    });
   },
 };
 </script>

@@ -1,18 +1,14 @@
+/* eslint-disable no-unused-vars */
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 import Secret from "../views/Secret.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home,
-  },
   {
     path: "/login",
     name: "login",
@@ -27,6 +23,9 @@ const routes = [
     path: "/secret",
     name: "secret",
     component: Secret,
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/about",
@@ -43,6 +42,18 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+  const auth = getAuth();
+  const isAuthenticated = auth.currentUser;
+
+  if (requiresAuth && !isAuthenticated) {
+    next("/login");
+  } else {
+    next();
+  }
 });
 
 export default router;

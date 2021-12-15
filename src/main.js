@@ -7,6 +7,7 @@ import axios from "axios";
 import firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import vuetify from "./plugins/vuetify";
 
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
@@ -28,5 +29,6 @@ const analytics = getAnalytics(app);
 new Vue({
   router,
   store,
+  vuetify,
   render: (h) => h(App),
 }).$mount("#app");
