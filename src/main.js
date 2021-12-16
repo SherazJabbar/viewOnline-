@@ -8,8 +8,10 @@ import firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import vuetify from "./plugins/vuetify";
+import VueVideoPlayer from "vue-video-player";
 
-Vue.prototype.$axios = axios;
+Vue.use(VueVideoPlayer);
+
 Vue.config.productionTip = false;
 const firebaseConfig = {
   apiKey: "AIzaSyB3nHO2L-ApcF-7iwEJxD3TqGtDv1XcdL0",
@@ -25,6 +27,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+import { getFirestore } from "firebase/firestore";
+
+export const db = getFirestore();
 
 new Vue({
   router,

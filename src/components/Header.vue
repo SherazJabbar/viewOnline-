@@ -1,28 +1,59 @@
 <template>
-  <v-card class="container">
-    <v-tabs color="deep-purple accent-4" v-model="activeTab" right>
-      <v-tab>Login</v-tab>
-      <v-tab>SignUp</v-tab>
-      <v-tab>Abstract</v-tab>
-
-      <v-tabs-items v-model="activeTab">
-        <v-tab-item> <app-login></app-login> </v-tab-item>
-        <v-tab-item> <p>signup</p> </v-tab-item>
-        <v-tab-item> <p>Abstract</p> </v-tab-item>
-      </v-tabs-items>
-    </v-tabs>
-  </v-card>
+  <div class="container">
+    <v-toolbar>
+      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <v-toolbar-title>View Online</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn text><router-link to="/" tag="li">Home </router-link> </v-btn>
+        <v-btn text> My PlayList </v-btn>
+        <v-btn text
+          ><router-link to="/register" tag="li">Register</router-link>
+        </v-btn>
+        <v-btn text>
+          <router-link to="/login" tag="li"> Sign In </router-link>
+        </v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
+  </div>
 </template>
 
 <script>
-import Login from "../views/Login.vue";
+import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 
 export default {
   data() {
     return {
-      activeTab: "",
+      loggedIn: false,
     };
   },
-  components: { "app-login": Login },
+  methods: {
+    async signOut() {
+      console.log("signout clicked");
+      try {
+        const auth = getAuth();
+        await signOut(auth);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+  created() {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      console.log(user);
+      if (user) {
+        this.loggedIn = true;
+      } else {
+        this.loggedIn = false;
+      }
+    });
+  },
 };
 </script>
+
+<style scoped>
+li {
+  list-style: none;
+}
+</style>

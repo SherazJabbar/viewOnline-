@@ -1,5 +1,5 @@
 <template>
-  <div>Router</div>
+  <div>This is Home component</div>
 </template>
 
 <script>
