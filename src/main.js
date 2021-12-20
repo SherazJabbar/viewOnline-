@@ -3,12 +3,12 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import axios from "axios";
-import firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import vuetify from "./plugins/vuetify";
 import VueVideoPlayer from "vue-video-player";
+
+// global register
 
 Vue.use(VueVideoPlayer);
 

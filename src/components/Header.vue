@@ -10,9 +10,10 @@
         <v-btn text
           ><router-link to="/register" tag="li">Register</router-link>
         </v-btn>
-        <v-btn text>
-          <router-link to="/login" tag="li"> Sign In </router-link>
+        <v-btn text v-show="loggedIn == false">
+          <router-link to="/login" tag="li">Sign in</router-link>
         </v-btn>
+        <v-btn text @click="signOut" v-show="loggedIn == true">Sign out</v-btn>
       </v-toolbar-items>
     </v-toolbar>
   </div>

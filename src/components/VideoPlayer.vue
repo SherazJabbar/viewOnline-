@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 <template>
   <div class="item">
     <div class="player">
@@ -15,12 +14,13 @@
 
 <script>
 // custom skin css
-// import "../src/custom-theme.css";
 
 export default {
+  props: {
+    videoData: Object,
+  },
   data() {
     return {
-      // videojs options
       playerOptions: {
         height: "500",
         autoplay: true,
@@ -30,10 +30,8 @@ export default {
         sources: [
           {
             type: "video/mp4",
-            // mp4
-            src: "http://vjs.zencdn.net/v/oceans.mp4",
-            // webm
-            // src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
+
+            src: this.props.videoData.sources,
           },
         ],
         // poster:
@@ -41,6 +39,9 @@ export default {
       },
     };
   },
+  // created() {
+  //   console.log(this.props.videoData);
+  // },
   mounted() {
     // console.log('this is current player instance object', this.player)
     setTimeout(() => {
@@ -66,7 +67,7 @@ export default {
     },
   },
   methods: {
-    // listen event
+    // // listen event
     // onPlayerPlay(player) {
     //   // console.log('player play!', player)
     // },

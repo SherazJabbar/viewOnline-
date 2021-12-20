@@ -46,26 +46,6 @@
       </v-container>
     </v-app>
   </div>
-  <!-- <form @submit.prevent="pressed">
-      <div class="login">
-        <input type="email" name="" id="" placeholder="Login" v-model="email" />
-      </div>
-      <div class="password">
-        <input
-          type="password"
-          name=""
-          id=""
-          placeholder="password"
-          v-model="password"
-        />
-      </div>
-      <button type="submit">Login</button>
-    </form> -->
-  <!-- <div class="error" v-if="error">{{ error.message }}</div> -->
-  <!-- <span
-      >Need an account ? Click here to
-      <router-link to="/register">Register</router-link></span
-    > -->
 </template>
 
 <script>
@@ -92,7 +72,7 @@ export default {
           this.email,
           this.password
         );
-        this.$router.replace({ name: "secret" });
+        this.$router.replace({ path: "/" });
       } catch (error) {
         console.log(error);
       }
