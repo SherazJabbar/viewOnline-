@@ -7,7 +7,8 @@ export const mediaJSON = [
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
 
     subtitle: "By Blender Foundation",
-    thumb: "images/BigBuckBunny.jpg",
+    thumb:
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80",
     title: "Big Buck Bunny",
   },
   {
@@ -16,7 +17,8 @@ export const mediaJSON = [
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
 
     subtitle: "By Blender Foundation",
-    thumb: "images/ElephantsDream.jpg",
+    thumb:
+      "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
     title: "Elephant Dream",
   },
   {
@@ -26,7 +28,8 @@ export const mediaJSON = [
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
 
     subtitle: "By Google",
-    thumb: "images/ForBiggerBlazes.jpg",
+    thumb:
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=974&q=80",
     title: "For Bigger Blazes",
   },
   {
@@ -36,7 +39,8 @@ export const mediaJSON = [
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
 
     subtitle: "By Google",
-    thumb: "images/ForBiggerEscapes.jpg",
+    thumb:
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80",
     title: "For Bigger Escape",
   },
   {
@@ -46,7 +50,8 @@ export const mediaJSON = [
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
 
     subtitle: "By Google",
-    thumb: "images/ForBiggerFun.jpg",
+    thumb:
+      "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
     title: "For Bigger Fun",
   },
   {
@@ -56,7 +61,8 @@ export const mediaJSON = [
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
 
     subtitle: "By Google",
-    thumb: "images/ForBiggerJoyrides.jpg",
+    thumb:
+      "https://images.unsplash.com/photo-1588392382834-a891154bca4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80",
     title: "For Bigger Joyrides",
   },
   {
@@ -66,7 +72,8 @@ export const mediaJSON = [
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
 
     subtitle: "By Google",
-    thumb: "images/ForBiggerMeltdowns.jpg",
+    thumb:
+      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
     title: "For Bigger Meltdowns",
   },
   {
@@ -76,57 +83,58 @@ export const mediaJSON = [
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
 
     subtitle: "By Blender Foundation",
-    thumb: "images/Sintel.jpg",
+    thumb:
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
     title: "Sintel",
   },
-  {
-    description:
-      "Smoking Tire takes the all-new Subaru Outback to the highest point we can find in hopes our customer-appreciation Balloon Launch will get some free T-shirts into the hands of our viewers.",
-    sources:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+  // {
+  //   description:
+  //     "Smoking Tire takes the all-new Subaru Outback to the highest point we can find in hopes our customer-appreciation Balloon Launch will get some free T-shirts into the hands of our viewers.",
+  //   sources:
+  //     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
 
-    subtitle: "By Garage419",
-    thumb: "images/SubaruOutbackOnStreetAndDirt.jpg",
-    title: "Subaru Outback On Street And Dirt",
-  },
-  {
-    description:
-      "Tears of Steel was realized with crowd-funding by users of the open source 3D creation tool Blender. Target was to improve and test a complete open and free pipeline for visual effects in film - and to make a compelling sci-fi film in Amsterdam, the Netherlands.  The film itself, and all raw material used for making it, have been released under the Creatieve Commons 3.0 Attribution license. Visit the tearsofsteel.org website to find out more about this, or to purchase the 4-DVD box with a lot of extras.  (CC) Blender Foundation - http://www.tearsofsteel.org",
-    sources:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+  //   subtitle: "By Garage419",
+  //   thumb: "../images/SubaruOutbackOnStreetAndDirt.jpg",
+  //   title: "Subaru Outback On Street And Dirt",
+  // },
+  // {
+  //   description:
+  //     "Tears of Steel was realized with crowd-funding by users of the open source 3D creation tool Blender. Target was to improve and test a complete open and free pipeline for visual effects in film - and to make a compelling sci-fi film in Amsterdam, the Netherlands.  The film itself, and all raw material used for making it, have been released under the Creatieve Commons 3.0 Attribution license. Visit the tearsofsteel.org website to find out more about this, or to purchase the 4-DVD box with a lot of extras.  (CC) Blender Foundation - http://www.tearsofsteel.org",
+  //   sources:
+  //     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
 
-    subtitle: "By Blender Foundation",
-    thumb: "images/TearsOfSteel.jpg",
-    title: "Tears of Steel",
-  },
-  {
-    description:
-      "The Smoking Tire heads out to Adams Motorsports Park in Riverside, CA to test the most requested car of 2010, the Volkswagen GTI. Will it beat the Mazdaspeed3's standard-setting lap time? Watch and see...",
-    sources:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+  //   subtitle: "By Blender Foundation",
+  //   thumb: "../images/TearsOfSteel.jpg",
+  //   title: "Tears of Steel",
+  // },
+  // {
+  //   description:
+  //     "The Smoking Tire heads out to Adams Motorsports Park in Riverside, CA to test the most requested car of 2010, the Volkswagen GTI. Will it beat the Mazdaspeed3's standard-setting lap time? Watch and see...",
+  //   sources:
+  //     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
 
-    subtitle: "By Garage419",
-    thumb: "images/VolkswagenGTIReview.jpg",
-    title: "Volkswagen GTI Review",
-  },
-  {
-    description:
-      "The Smoking Tire is going on the 2010 Bullrun Live Rally in a 2011 Shelby GT500, and posting a video from the road every single day! The only place to watch them is by subscribing to The Smoking Tire or watching at BlackMagicShine.com",
-    sources:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+  //   subtitle: "By Garage419",
+  //   thumb: "../images/VolkswagenGTIReview.jpg",
+  //   title: "Volkswagen GTI Review",
+  // },
+  // {
+  //   description:
+  //     "The Smoking Tire is going on the 2010 Bullrun Live Rally in a 2011 Shelby GT500, and posting a video from the road every single day! The only place to watch them is by subscribing to The Smoking Tire or watching at BlackMagicShine.com",
+  //   sources:
+  //     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
 
-    subtitle: "By Garage419",
-    thumb: "images/WeAreGoingOnBullrun.jpg",
-    title: "We Are Going On Bullrun",
-  },
-  {
-    description:
-      "The Smoking Tire meets up with Chris and Jorge from CarsForAGrand.com to see just how far $1,000 can go when looking for a car.The Smoking Tire meets up with Chris and Jorge from CarsForAGrand.com to see just how far $1,000 can go when looking for a car.",
-    sources:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+  //   subtitle: "By Garage419",
+  //   thumb: "../images/WeAreGoingOnBullrun.jpg",
+  //   title: "We Are Going On Bullrun",
+  // },
+  // {
+  //   description:
+  //     "The Smoking Tire meets up with Chris and Jorge from CarsForAGrand.com to see just how far $1,000 can go when looking for a car.The Smoking Tire meets up with Chris and Jorge from CarsForAGrand.com to see just how far $1,000 can go when looking for a car.",
+  //   sources:
+  //     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
 
-    subtitle: "By Garage419",
-    thumb: "images/WhatCarCanYouGetForAGrand.jpg",
-    title: "What care can you get for a grand?",
-  },
+  //   subtitle: "By Garage419",
+  //   thumb: "../images/WhatCarCanYouGetForAGrand.jpg",
+  //   title: "What care can you get for a grand?",
+  // },
 ];

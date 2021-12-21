@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="400">
+  <v-card max-width="400">
     <v-list dense>
       <v-subheader>Videos</v-subheader>
       <v-list-item-group v-model="selectedItem" color="primary">
@@ -27,17 +27,13 @@ import { mediaJSON } from "../utils/util";
 
 export default {
   data: () => ({
-    selectedItem: 1,
+    selectedItem: 0,
     items: [...mediaJSON],
   }),
   methods: {
     clicked(item) {
-      console.log(item);
       this.$emit("getVideo", item);
     },
-  },
-  created() {
-    console.log(this.items);
   },
 };
 </script>

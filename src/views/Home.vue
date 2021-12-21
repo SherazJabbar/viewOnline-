@@ -3,7 +3,10 @@
     <v-row no-gutters>
       <v-col cols="12" sm="6" md="8">
         <v-card class="pa-2" outlined tile>
-          <app-video-player :videoData="vidData"></app-video-player>
+          <app-video-player
+            :videoData="vidData"
+            v-if="helper"
+          ></app-video-player>
         </v-card>
       </v-col>
       <v-col cols="6" md="4">
@@ -27,12 +30,16 @@ export default {
   data() {
     return {
       vidData: null,
+      helper: true,
     };
   },
   methods: {
     playVideo(data) {
       this.vidData = data;
-      console.log(data);
+      this.helper = false;
+      this.$nextTick(() => {
+        this.helper = true;
+      });
     },
   },
 };

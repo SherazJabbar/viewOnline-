@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <v-toolbar>
-      <v-toolbar-side-icon></v-toolbar-side-icon>
       <v-toolbar-title>View Online</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -42,7 +41,6 @@ export default {
   created() {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
-      console.log(user);
       if (user) {
         this.loggedIn = true;
       } else {
