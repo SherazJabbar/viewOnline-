@@ -5,8 +5,8 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn text><router-link to="/" tag="li">Home </router-link> </v-btn>
-        <v-btn text> My PlayList </v-btn>
-        <v-btn text
+        <v-btn text v-if="loggedIn"> My PlayList </v-btn>
+        <v-btn text :disabled="loggedIn"
           ><router-link to="/register" tag="li">Register</router-link>
         </v-btn>
         <v-btn text v-show="loggedIn == false">

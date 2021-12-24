@@ -1,18 +1,11 @@
 <template>
-  <v-container class="grey lighten-5">
-    <v-row no-gutters>
+  <v-container>
+    <v-row>
       <v-col cols="12" sm="6" md="8">
-        <v-card class="pa-2" outlined tile>
-          <app-video-player
-            :videoData="vidData"
-            v-if="helper"
-          ></app-video-player>
-        </v-card>
+        <app-video-player :videoData="vidData" v-if="helper"></app-video-player>
       </v-col>
       <v-col cols="6" md="4">
-        <v-card class="pa-2" outlined tile>
-          <app-videos-list @getVideo="playVideo"></app-videos-list>
-        </v-card>
+        <app-videos-list @getVideo="playVideo"></app-videos-list>
       </v-col>
     </v-row>
   </v-container>
