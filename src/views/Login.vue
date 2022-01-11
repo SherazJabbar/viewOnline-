@@ -1,50 +1,46 @@
 <template>
-  <div id="app">
-    <v-app :class="{ 'pa-3': $vuetify.breakpoint.smAndUp }" id="inspire">
-      <v-container>
-        <v-layout wrap>
-          <v-flex sm12 md6 offset-md3>
-            <v-card elevation="4" light tag="section" class="mt-5">
-              <v-card-title>
-                <v-layout align-center justify-space-between>
-                  <h3 class="headline">
-                    {{ platformName }}
-                  </h3>
-                </v-layout>
-              </v-card-title>
-              <v-divider></v-divider>
-              <v-card-text>
-                <p>Sign in with your email and password:</p>
-                <v-form>
-                  <v-text-field
-                    outline
-                    label="Email"
-                    type="text"
-                    v-model="email"
-                  ></v-text-field>
-                  <v-text-field
-                    outline
-                    hide-details
-                    label="Password"
-                    type="password"
-                    v-model="password"
-                  ></v-text-field>
-                </v-form>
-
-                <v-btn
-                  color="blue-grey lighten-4"
-                  class="mt-4"
-                  block
-                  @click="pressed"
-                >
-                  Sign In</v-btn
-                >
-              </v-card-text>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-app>
+  <div id="app" class="mt-5 d-flex justify-center">
+    <v-card class="px-4" max-width="37rem">
+      <v-card-text>
+        <v-form ref="loginForm" v-model="valid" lazy-validation>
+          <v-row>
+            <v-col cols="12">
+              <v-text-field
+                v-model="loginEmail"
+                :rules="loginEmailRules"
+                label="E-mail"
+                required
+              ></v-text-field>
+            </v-col>
+            <v-col cols="12">
+              <v-text-field
+                v-model="loginPassword"
+                :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                :rules="[rules.required, rules.min]"
+                :type="show1 ? 'text' : 'password'"
+                name="input-10-1"
+                label="Password"
+                hint="At least 8 characters"
+                counter
+                @click:append="show1 = !show1"
+              ></v-text-field>
+            </v-col>
+            <v-spacer></v-spacer>
+            <v-col class="d-flex ml-auto" cols="12" sm="3" xsm="12">
+              <v-btn
+                max-width="100%"
+                large
+                block
+                :disabled="!valid"
+                color="success"
+                @click.prevent="login"
+                >Login</v-btn
+              >
+            </v-col>
+          </v-row>
+        </v-form>
+      </v-card-text>
+    </v-card>
   </div>
 </template>
 
@@ -54,23 +50,38 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 export default {
   data() {
     return {
-      email: "",
-      password: "",
-      error: "",
-      darkTheme: true,
-      platformName: "Sign In",
+      valid: true,
+      loginPassword: "",
+      loginEmail: "",
+      loginEmailRules: [
+        (v) => !!v || "Required",
+        (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+      ],
+      show1: false,
+      rules: {
+        required: (value) => !!value || "Required.",
+        min: (v) => (v && v.length >= 8) || "Min 8 characters",
+      },
     };
   },
   methods: {
-    async pressed() {
-      console.log("pressed");
+    validate() {
+      this.$refs.loginForm.validate();
+    },
+    reset() {
+      this.$refs.form.reset();
+    },
+    resetValidation() {
+      this.$refs.form.resetValidation();
+    },
+    async login() {
       try {
         const auth = getAuth();
         // eslint-disable-next-line no-unused-vars
         const val = await signInWithEmailAndPassword(
           auth,
-          this.email,
-          this.password
+          this.loginEmail,
+          this.loginPassword
         );
         this.$router.replace({ path: "/" });
       } catch (error) {

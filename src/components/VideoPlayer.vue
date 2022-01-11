@@ -1,5 +1,5 @@
 <template>
-  <div class="item">
+  <div class="item container">
     <div class="player">
       <video-player
         class="vjs-custom-skin"
@@ -42,10 +42,9 @@ export default {
   },
 
   mounted() {
-    console.log("Mounted");
     const dummyData = { title: "Dummy", description: "lorem Ipsum" };
     this.videoData
-      ? (this.playerOptions.sources[0].src = this.videoData.sources) &&
+      ? (this.playerOptions.sources[0].src = this.videoData.source) &&
         (this.data = this.videoData)
       : (this.playerOptions.sources[0].src =
           "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4") &&

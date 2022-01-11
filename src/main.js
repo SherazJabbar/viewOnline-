@@ -7,9 +7,9 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import vuetify from "./plugins/vuetify";
 import VueVideoPlayer from "vue-video-player";
+import VueFormulate from "@braid/vue-formulate";
 
-// global register
-
+Vue.use(VueFormulate);
 Vue.use(VueVideoPlayer);
 
 Vue.config.productionTip = false;
